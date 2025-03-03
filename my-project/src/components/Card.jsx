@@ -1,7 +1,7 @@
 
 
 const Card = ({ coffee }) => {
-    const { id, category, name, rating, image, type, origin, popularity } = coffee;
+    const { category, name, rating, image, type, origin, popularity } = coffee;
     return (
         <div className="card bg-base-100 hover:shadow-md border-2 border-gray-100">
             <figure className="w-full h-[300px] object-cover">

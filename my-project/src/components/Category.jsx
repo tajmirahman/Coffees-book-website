@@ -6,7 +6,7 @@ const Category = ({ data }) => {
     return (
 
         <div role="tablist" className="tabs tabs-border py-5">
-            <NavLink role="tab" className={({ isActive }) => `tab lg:text-2xl font-thin ${isActive ? "tab-active" : ""}`}>{data.category}</NavLink>
+            <NavLink to={`/category/${data.category}`} role="tab" className={({ isActive }) => `tab lg:text-2xl font-thin ${isActive ? "tab-active" : ""}`}>{data.category}</NavLink>
             
         </div>
 

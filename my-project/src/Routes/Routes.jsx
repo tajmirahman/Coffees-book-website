@@ -8,33 +8,39 @@ import CoffeeCard from "../components/CoffeeCard";
 
 
 const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayout />,
-    children:[
-        {
-            path:'/',
-            element:<Home />,
-            loader:()=>fetch('../categories.json'),
-            children:[
-                {
-                    path:'/',
-                    element:<CoffeeCard />,
-                    loader:()=>fetch('../coffees.json'),
-                }
+    {
+        path: "/",
+        element: <MainLayout />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+                loader: () => fetch('../categories.json'),
+                children: [
+                    {
+                        path: '/',
+                        element: <CoffeeCard />,
+                        loader: () => fetch('../coffees.json'),
+                    },
+                    {
+                        path: '/category/:category',
+                        element: <CoffeeCard />,
+                        loader: () => fetch('../coffees.json'),
+                    },
 
-            ]
-        },
-        {
-            path:'/coffee',
-            element:<Coffee />
-        },
-        {
-            path:'/dashboard',
-            element:<Dashboard />
-        }
-    ]
-  },
+
+                ]
+            },
+            {
+                path: '/coffee',
+                element: <Coffee />
+            },
+            {
+                path: '/dashboard',
+                element: <Dashboard />
+            }
+        ]
+    },
 ]);
 
 export default routes;
