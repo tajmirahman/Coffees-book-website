@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 
 
 const Card = ({ coffee }) => {
-    const {id, category, name, rating, image, type, origin, popularity } = coffee;
+    const { id, category, name, rating, image, type, origin, popularity } = coffee;
     return (
         <div className="card bg-base-100 hover:shadow-md border-2 border-gray-100">
+            <Link to={`/coffee/${id}`}
+                className="transition hover:scale-105 shadow-xl rounded-xl overflow-hidden"
+            />
             <figure className="w-full h-[300px] object-cover">
                 <img className="w-full h-[300px]" src={image} alt="Shoes" />
             </figure>
@@ -17,10 +20,10 @@ const Card = ({ coffee }) => {
                 <p>Popularity: {popularity}</p>
             </div>
 
-           <div className="flex justify-end p-4">
-            <Link to={`/coffee/${id}`}><button className="btn btn-warning">Details</button></Link>
-           </div>
-            
+            <div className="flex justify-end p-4">
+                <Link to={`/coffee/${id}`}><button className="btn btn-warning">Details</button></Link>
+            </div>
+
         </div>
     );
 };
