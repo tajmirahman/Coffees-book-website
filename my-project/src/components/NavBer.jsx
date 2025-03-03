@@ -17,10 +17,10 @@ const NavBer = () => {
                         <Link to={'/dashboard'} >Dashboard</Link>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Coffee_Book_Recap</a>
+                <Link to={'/'} className="btn btn-ghost text-xl">Coffee_Book_Recap</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal gap-4 text-2xl px-1">
                     <Link to={'/'} >Home</Link>
                     <Link to={'/coffee'} >Coffee</Link>
                     <Link to={'/dashboard'} >Dashboard</Link>
