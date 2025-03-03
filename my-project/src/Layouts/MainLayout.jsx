@@ -8,7 +8,9 @@ const MainLayout = () => {
         <div>
 
             {/* navber */}
+            <div className="h-16">
             <NavBer/>
+            </div>
 
             <div className="min-h-[calc(100vh-242px)] container mx-auto px-10 py-12">
 
