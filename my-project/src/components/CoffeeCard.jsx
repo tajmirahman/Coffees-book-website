@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 
 const CoffeeCard = () => {
+
     const data = useLoaderData();
     const { category } = useParams();
 
@@ -32,6 +33,10 @@ const CoffeeCard = () => {
                 {
                     coffee.map(coffee => <Card key={coffee.id} coffee={coffee} />)
                 }
+            </div>
+
+            <div className="p-4"> 
+            <button onClick={()=>setCoffee(data)} className="btn btn-warning">Show All</button>
             </div>
         </>
 
