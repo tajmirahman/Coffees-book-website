@@ -10,7 +10,7 @@ const MainLayout = () => {
             {/* navber */}
             <NavBer/>
 
-            <div className="min-h-[calc(100vh-242px)] container mx-auto">
+            <div className="min-h-[calc(100vh-242px)] container mx-auto px-10 py-12">
 
             {/* dianamic section */}
             <Outlet/>
