@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import imgNu from '../assets/nutriton.jpg';
+import { addAllFavorite, getAllFavorite } from "../components/Utility/Index";
 
 
 const CoffeeDetails = () => {
@@ -8,11 +9,26 @@ const CoffeeDetails = () => {
     const { id } = useParams();
 
     const [coffee, setCoffee] = useState({});
+    // disable button for state
+    const [favorite,setFavorite]=useState(false);
 
     useEffect(() => {
         const findId = [...data].find(coffee => coffee.id == id);
         setCoffee(findId);
+        const favorites= getAllFavorite();
+        const isExit= favorites.find(fav=> fav.id === findId.id);
+        if(isExit){
+            setFavorite(true);
+        }
+        
+     
     }, [data, id])
+
+
+    const handleFavorite = (coffee) => {
+        addAllFavorite(coffee);
+        setFavorite(true);
+    }
 
     // console.log(coffee);
 
@@ -24,7 +40,7 @@ const CoffeeDetails = () => {
                 <img className="w-full h-[600px]  rounded-lg" src={coffee.image} alt="" />
             </div>
             <div className="flex justify-end">
-                <button className="btn btn-warning">Add Favorite</button>
+                <button disabled={favorite} onClick={() => handleFavorite(coffee)} className="btn btn-warning">Add Favorite</button>
             </div>
             <h1 className="lg:text-2xl ">Making Procedure- {coffee.description}</h1>
             <div className="">
