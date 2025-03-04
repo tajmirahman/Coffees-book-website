@@ -23,6 +23,9 @@ const CoffeeDetails = () => {
             <div className="w-full h-[600px] object-cover ">
                 <img className="w-full h-[600px]  rounded-lg" src={coffee.image} alt="" />
             </div>
+            <div className="flex justify-end">
+                <button className="btn btn-warning">Add Favorite</button>
+            </div>
             <h1 className="lg:text-2xl ">Making Procedure- {coffee.description}</h1>
             <div className="">
                 <p>Name: {name}</p>
